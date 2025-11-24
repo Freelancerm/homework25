@@ -6,6 +6,11 @@ from datetime import datetime
 
 # Продукти
 class ProductIn(Schema):
+    """
+    Схема вхідних даних для створення або оновлення об'єкта Product.
+
+    Використовується для валідації даних, що надходять у тілі POST/PUT запиту.
+    """
     name: str
     description: Optional[str] = None
     price: Decimal
@@ -14,6 +19,7 @@ class ProductIn(Schema):
 
 
 class ProductOut(Schema):
+    """ Схема вихідних даних для представлення об'єкта Product у відповіді API. """
     id: int
     name: str
     description: Optional[str]
@@ -24,11 +30,13 @@ class ProductOut(Schema):
 
 # Кошик
 class CartItemIn(Schema):
+    """ Схема вхідних даних для додавання товару до кошика. """
     product_id: int
     quantity: int = 1
 
 
 class CartItemOut(Schema):
+    """ Схема вихідних даних для представлення елемента CartItem. """
     id: int
     product_id: int
     product_name: str
@@ -40,6 +48,7 @@ class CartItemOut(Schema):
 
 
 class CartOut(Schema):
+    """ Схема вихідних даних для представлення об'єкта Cart (кошика). """
     id: int
     user_id: int
     items: List[CartItemOut]
@@ -48,10 +57,12 @@ class CartOut(Schema):
 
 # Замовлення
 class OrderIn(Schema):
+    """ Схема вхідних даних для оформлення нового замовлення (Checkout). """
     shipping_address: Optional[str] = "Стандартна адреса доставки"
 
 
 class OrderItemOut(Schema):
+    """ Схема вихідних даних для представлення елемента замовлення (OrderItem). """
     product_name: str
     quantity: int
     price_at_purchase: Decimal
@@ -68,11 +79,14 @@ class OrderItemOut(Schema):
     def resolve_price_at_purchase(obj):
         return obj.price_at_purchase
 
+
 class OrderStatusUpdate(Schema):
-    status: str # Очікуємо PENDING, SHIPPED, DELIVERED, CANCELED
+    """ Схема вхідних даних для оновлення статусу існуючого замовлення. """
+    status: str  # Очікуємо PENDING, SHIPPED, DELIVERED, CANCELED
 
 
 class OrderOut(Schema):
+    """ Схема вихідних даних для представлення об'єкта Order (замовлення). """
     id: int
     user_id: int
     status: str

@@ -2,12 +2,11 @@ from ninja import Router
 from .models import AuthToken
 from .schemas import LogIn, TokenOut
 from django.contrib.auth import authenticate
-from .auth import bearer_auth
 from ninja.errors import HttpError
 
 
 def get_auth_router():
-    auth_router = Router()
+    auth_router = Router(tags=['Login'])
 
     @auth_router.post("login/", response=TokenOut)
     def login(request, payload: LogIn):
@@ -17,6 +16,7 @@ def get_auth_router():
         Автентифікує користувача за наданими 'username' та 'password'.
         У разі успіху створює або отримує існуючий AuthToken і повертає його.
 
+        :param request: Запит від клієнта.
         :param payload: Дані для входу (username, password).
         :type payload: LogIn
         :raises HTTPError 401: Якщо надані недійсні облікові дані.

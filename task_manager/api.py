@@ -5,9 +5,8 @@ from shared_auth.auth import bearer_auth
 from django.shortcuts import get_object_or_404
 from typing import List, Optional
 
-
 # Роутер для завдань (Task CRUD)
-task_router = Router(auth=bearer_auth)
+task_router = Router(tags=['Tasks'], auth=bearer_auth)
 
 
 def get_current_user(request):
