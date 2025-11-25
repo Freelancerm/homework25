@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'e_commerce.apps.ECommerceConfig',
     'movies.apps.MoviesConfig',
     'blog.apps.BlogConfig',
+    'monitoring.apps.MonitoringConfig',
     'ninja',
 ]
 
