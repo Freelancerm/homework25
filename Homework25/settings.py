@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'monitoring.apps.MonitoringConfig',
     'library.apps.LibraryConfig',
+    'students.apps.StudentsConfig',
     'ninja',
 ]
 
