@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'movies.apps.MoviesConfig',
     'blog.apps.BlogConfig',
     'monitoring.apps.MonitoringConfig',
+    'library.apps.LibraryConfig',
     'ninja',
 ]
 
