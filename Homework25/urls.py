@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('taskmanager/',include("task_manager.urls")),
     path('ecommerce/', include("e_commerce.urls")),
+    path('movies/', include("movies.urls")),
 ]

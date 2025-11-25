@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'shared_auth',
     'task_manager.apps.TaskManagerConfig',
     'e_commerce.apps.ECommerceConfig',
+    'movies.apps.MoviesConfig',
     'ninja',
 ]
 
