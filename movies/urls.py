@@ -9,7 +9,7 @@ api_movies = NinjaAPI(
     urls_namespace='movies_api_v1'
 )
 
-api_movies.add_router("/auth/", get_auth_router())
+api_movies.add_router("/", get_auth_router())
 api_movies.add_router("/movies/", movies_router)
 api_movies.add_router("/genres/", genres_router)
 api_movies.add_router("/ratings/", ratings_router)

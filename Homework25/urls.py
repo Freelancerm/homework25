@@ -23,4 +23,5 @@ urlpatterns = [
     path('taskmanager/',include("task_manager.urls")),
     path('ecommerce/', include("e_commerce.urls")),
     path('movies/', include("movies.urls")),
+    path('blog/', include("blog.urls")),
 ]

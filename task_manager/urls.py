@@ -5,7 +5,7 @@ from django.urls import path
 
 api_task_manager = NinjaAPI(title="Task Management API", version="1.0.0")
 
-api_task_manager.add_router("/auth/", get_auth_router())
+api_task_manager.add_router("/", get_auth_router())
 api_task_manager.add_router("/tasks/", task_router)
 
 urlpatterns = [
